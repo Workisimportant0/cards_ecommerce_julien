@@ -1,0 +1,104 @@
+/* règle magique de reset css navigateur */
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+/* gestion de la carte produit */
+.card {
+    /* on gère la bordure */
+    border:solid teal 1px;
+    border-radius: 3px;
+
+    /* on gère sa largeur */
+    width:300px;
+
+    /*on gère son positionnement interne Flex power !*/
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card>* {
+    /* on laisse un peu d'espace à l'interieur de la carte */
+    margin:10px;
+}
+
+/* gestion de l'image et du voile sur le produit */
+.card>.image {
+    position: relative;
+    width:280px;
+    text-align: center;
+}
+.card>.image>img {
+   height:100%;   
+}
+.voile {
+    /* positionnement du voile */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width:100%;
+    height: 100%;
+    /* gestion des couleurs du voile */
+    background-color: teal;
+    color:white;
+    /* centrage du texte interne */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* effet css */
+    opacity: 0;
+    transition: all 1s ease;
+}
+.voile:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+
+/* gestion du pied avec le petit panier */
+.card>.footProd {
+    /* on centre le bloc */
+    width:90%;
+    margin:10px auto;
+    /* on gère le placement inetrne */
+    display:flex;
+    justify-content: space-between;
+}
+
+.fa-cart-plus {
+    padding:10px;
+    background-color: teal;
+    color:white;
+    border: teal solid 1px;
+    border-radius: 3px;
+    transition: all 1s ease;
+}
+.fa-cart-plus:hover{
+    background-color: white;
+    color: teal;
+    cursor: pointer;
+}
+
+/* gestion du conteneur rayon */
+#rayon {
+    /* on gère le placement interne du rayon */
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    /* on centre esthétiquement le rayon */
+    width:90%;
+    margin: 0 auto;
+
+    /*on gère une bordure sur le rayon afin de le matérialiser */
+    border: solid teal 1px;
+}
+#rayon>* {
+    /* on mets un peu d'espace entre les blocs */
+    margin:10px;
+}
